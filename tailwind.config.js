@@ -5,11 +5,11 @@ module.exports = {
       {
         light: {
         
-"primary": "#176F6B",
+"primary": "#0FCFEC",
         
-"secondary": "#FFC000",
+"secondary": "#19D3AE",
         
-"accent": "#FFEDD5",
+"accent": "#3A4256",
         
 "neutral": "#F3F4F6",
         
