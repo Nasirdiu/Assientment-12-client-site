@@ -1,7 +1,7 @@
 import React from "react";
 
 const ReviewCard = ({ review }) => {
-  const { name, img, reviews } = review;
+  const { name, img, description } = review;
   return (
     <div class="card card-compact w-96 bg-base-100 shadow-xl mt-10 ">
       <div class="avatar">
@@ -11,7 +11,7 @@ const ReviewCard = ({ review }) => {
       </div>
       <div class="card-body">
         <h2 class="card-title text-secondary mx-auto">{name}</h2>
-        <p>{reviews}</p>
+        <p>{description}</p>
         <div class="rating">
           <input
             type="radio"

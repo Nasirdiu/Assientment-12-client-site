@@ -32,7 +32,10 @@ const ProductAdd = () => {
           const product = {
             name: data.name,
             email: data.email,
-
+            description:data.description,
+            price:data.price,
+            minimum:data.minimum,
+            available:data.available,
             img: img,
           };
           //send to your database:
@@ -59,12 +62,12 @@ const ProductAdd = () => {
   //     return <Loading></Loading>;
   //   }
   return (
-    <div>
+    <div className="mt-10">
       <h1 className="3xl text-center text-secondary font-bold ">Product Add</h1>
-      <form onSubmit={handleSubmit(onSubmit)}>
+      <form className="mb-10" onSubmit={handleSubmit(onSubmit)}>
         <div className="form-control w-full max-w-xs">
           <label className="label">
-            <span className="label-text">Name</span>
+            <span className="label-text">Product Name</span>
           </label>
           <input
             type="text"
@@ -81,6 +84,98 @@ const ProductAdd = () => {
             {errors.name?.type === "required" && (
               <span className="label-text-alt text-red-600">
                 {errors.name.message}
+              </span>
+            )}
+          </label>
+        </div>
+        <div className="form-control w-full max-w-xs">
+          <label className="label">
+            <span className="label-text">Description</span>
+          </label>
+          <input
+            type="text"
+            placeholder="Your Description"
+            className="input input-bordered w-full max-w-xs"
+            {...register("description", {
+              required: {
+                value: true,
+                message: "Name is Required",
+              },
+            })}
+          />
+          <label className="label">
+            {errors.description?.type === "required" && (
+              <span className="label-text-alt text-red-600">
+                {errors.description.message}
+              </span>
+            )}
+          </label>
+        </div>
+        <div className="form-control w-full max-w-xs">
+          <label className="label">
+            <span className="label-text">Price</span>
+          </label>
+          <input
+            type="number"
+            placeholder="Your Price"
+            className="input input-bordered w-full max-w-xs"
+            {...register("price", {
+              required: {
+                value: true,
+                message: "price is Required",
+              },
+            })}
+          />
+          <label className="label">
+            {errors.price?.type === "required" && (
+              <span className="label-text-alt text-red-600">
+                {errors.price.message}
+              </span>
+            )}
+          </label>
+        </div>
+        <div className="form-control w-full max-w-xs">
+          <label className="label">
+            <span className="label-text">Minimum Order</span>
+          </label>
+          <input
+            type="number"
+            placeholder="Your Minimum Order"
+            className="input input-bordered w-full max-w-xs"
+            {...register("minimum", {
+              required: {
+                value: true,
+                message: "minimum is Required",
+              },
+            })}
+          />
+          <label className="label">
+            {errors.minimum?.type === "required" && (
+              <span className="label-text-alt text-red-600">
+                {errors.minimum.message}
+              </span>
+            )}
+          </label>
+        </div>
+        <div className="form-control w-full max-w-xs">
+          <label className="label">
+            <span className="label-text">Available Product</span>
+          </label>
+          <input
+            type="number"
+            placeholder="Your Available Product"
+            className="input input-bordered w-full max-w-xs"
+            {...register("available", {
+              required: {
+                value: true,
+                message: "available is Required",
+              },
+            })}
+          />
+          <label className="label">
+            {errors.available?.type === "required" && (
+              <span className="label-text-alt text-red-600">
+                {errors.available.message}
               </span>
             )}
           </label>
