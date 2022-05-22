@@ -18,6 +18,8 @@ import ProductAdd from "./Pages/Dashboard/ProductAdd";
 import ReviewAdd from "./Pages/Dashboard/AddReview";
 import NotFound from "./components/NotFound";
 import PurchaseProduct from "./Pages/Tools/PurchaseProduct";
+import Admin from "./Pages/Dashboard/Admin";
+import RequireAdmin from "./components/RequireAdmin/RequireAdmin";
 
 function App() {
   return (
@@ -52,7 +54,14 @@ function App() {
           <Route path="profile" element={<Profile></Profile>}></Route>
           <Route path="addReview" element={<ReviewAdd></ReviewAdd>}></Route>
           <Route path="addProduct" element={<ProductAdd></ProductAdd>}></Route>
-          
+          <Route
+            path="admin"
+            element={
+              <RequireAdmin>
+                <Admin></Admin>
+              </RequireAdmin>
+            }
+          ></Route>
         </Route>
         <Route path="*" element={<NotFound></NotFound>}></Route>
       </Routes>
