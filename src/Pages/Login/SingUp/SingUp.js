@@ -9,6 +9,7 @@ import { Link, useNavigate } from "react-router-dom";
 import { toast } from "react-toastify";
 import Loading from "../../../components/Loadding/Loading";
 import auth from "../../../firebase.init";
+import useToken from "../../../hooks/useToken";
 
 const SingUp = () => {
   const {
@@ -23,8 +24,7 @@ const SingUp = () => {
   //google sing in
   const [signInWithGoogle, gUser, gLoading, gError] = useSignInWithGoogle(auth);
 
-  //   const [token] = useToken(user || gUser);
-
+  const [token] = useToken(user || gUser);
   const navigate = useNavigate();
   let singInError;
   //loading
@@ -40,9 +40,9 @@ const SingUp = () => {
     );
   }
   //user
-     if (user || gUser) {
-      navigate("/home");
-    }
+  if (token) {
+    navigate("/home");
+  }
   const onSubmit = async (data) => {
     await createUserWithEmailAndPassword(data.email, data.password);
     await updateProfile({ displayName: data.name });

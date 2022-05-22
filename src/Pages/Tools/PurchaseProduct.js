@@ -3,8 +3,9 @@ import { useParams } from "react-router-dom";
 import useProducts from "../../hooks/useProducts";
 
 const PurchaseProduct = () => {
-  const [purchase, setPurchase] = useState();
+  const [purchase, setPurchase] = useState([]);
   const {id}=useParams();
+  console.log(id);
   useEffect(() => {
     fetch(`http://localhost:5000/product/`)
     .then(res=>res.json())

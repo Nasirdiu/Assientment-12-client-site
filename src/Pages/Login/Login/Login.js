@@ -9,6 +9,7 @@ import { Link, useLocation, useNavigate } from "react-router-dom";
 import { toast } from "react-toastify";
 import Loading from "../../../components/Loadding/Loading";
 import auth from "../../../firebase.init";
+import useToken from "../../../hooks/useToken";
 
 const Login = () => {
   const {
@@ -25,19 +26,18 @@ const Login = () => {
   const [sendPasswordResetEmail, sending, restError] =
     useSendPasswordResetEmail(auth);
   //use token
-  //   const [token] = useToken(user || gUser);
+  const [token] = useToken(user || gUser);
 
   let singInError;
   const navigate = useNavigate();
   const location = useLocation();
   let from = location.state?.from?.pathname || "/";
-  //   useEffect(() => {
-  //     if (token) {
-  //       navigate(from, { replace: true });
-  //     }
-  //   }, [token, from, navigate]);
-  //loading
-  if (user || gUser) {
+  useEffect(() => {
+    if (token) {
+      navigate(from, { replace: true });
+    }
+  }, [token, from, navigate]);
+  if (token) {
     navigate("/home");
   }
   if (loading || gLoading) {
@@ -162,10 +162,9 @@ const Login = () => {
           </p>
 
           <div className="divider">OR</div>
-          <button 
+          <button
             onClick={() => signInWithGoogle()}
             className="btn btn-outline"
-        
           >
             Continue with google
           </button>

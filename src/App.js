@@ -18,6 +18,7 @@ import ProductAdd from "./Pages/Dashboard/ProductAdd";
 import ReviewAdd from "./Pages/Dashboard/AddReview";
 import NotFound from "./components/NotFound";
 import PurchaseProduct from "./Pages/Tools/PurchaseProduct";
+
 function App() {
   return (
     <div>
@@ -30,7 +31,7 @@ function App() {
         <Route path="/login" element={<Login></Login>}></Route>
         <Route path="/singUp" element={<SingUp></SingUp>}></Route>
         <Route
-          path="/purchase"
+          path="/purchase/:id"
           element={
             <RequireAuth>
               <PurchaseProduct></PurchaseProduct>
@@ -51,6 +52,7 @@ function App() {
           <Route path="profile" element={<Profile></Profile>}></Route>
           <Route path="addReview" element={<ReviewAdd></ReviewAdd>}></Route>
           <Route path="addProduct" element={<ProductAdd></ProductAdd>}></Route>
+          
         </Route>
         <Route path="*" element={<NotFound></NotFound>}></Route>
       </Routes>
