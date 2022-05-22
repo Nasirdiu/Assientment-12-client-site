@@ -3,7 +3,7 @@ const BusinessSummary = () => {
   return (
     <div>
       <h1 className="text-3xl text-center uppercase mt-10 font-bold text-secondary">
-        Millions business trust us
+      Business Summary
       </h1>
       <h1 className="text-purple-600 uppercase text-center">
         try to understand users expectation

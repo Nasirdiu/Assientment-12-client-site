@@ -16,13 +16,16 @@ const Dashboard = () => {
         <ul className="menu p-4 overflow-y-auto w-48 bg-base-100 text-base-content">
           {/* <!-- Sidebar content here --> */}
           <li>
-            <Link to="/dashboard">My Purchase List</Link>
+            <Link to="/dashboard">My Order</Link>
           </li>
           <li>
-            <Link to="/dashboard/review">My Reviews</Link>
+            <Link to="/dashboard/addReview">Add A Review</Link>
           </li>
           <li>
-            <Link to="/dashboard/history">My History</Link>
+            <Link to="/dashboard/profile">My Profile</Link>
+          </li>
+          <li>
+            <Link to="/dashboard/addProduct">Product Add</Link>
           </li>
           {/* {admin && <>
             <li>

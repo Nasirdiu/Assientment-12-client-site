@@ -11,7 +11,10 @@ import Login from "./Pages/Login/Login/Login";
 import SingUp from "./Pages/Login/SingUp/SingUp";
 import Dashboard from "./Pages/Dashboard/Dashboard";
 import RequireAuth from "./components/RequireAuth/RequireAuth";
-import Purchase from "./Pages/Dashboard/Purchase";
+import AddReview from "./Pages/Dashboard/AddReview";
+import MyOrder from "./Pages/Dashboard/MyOrder";
+import Profile from "./Pages/Dashboard/Profile";
+import ProductAdd from "./Pages/Dashboard/ProductAdd";
 function App() {
   return (
     <div>
@@ -31,7 +34,10 @@ function App() {
             </RequireAuth>
           }
         >
-          <Route index element={<Purchase></Purchase>}></Route>
+          <Route index element={<MyOrder></MyOrder>}></Route>
+          <Route path="addReview" element={<AddReview></AddReview>}></Route>
+          <Route path="profile" element={<Profile></Profile>}></Route>
+          <Route path="addProduct" element={<ProductAdd></ProductAdd>}></Route>
         </Route>
       </Routes>
       <Footer></Footer>
