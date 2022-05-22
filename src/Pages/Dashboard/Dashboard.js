@@ -5,8 +5,8 @@ import auth from "../../firebase.init";
 import useAdmin from "../../hooks/useAdmin";
 
 const Dashboard = () => {
-  const [user]=useAuthState(auth);
-  const [admin]=useAdmin(user)
+  const [user] = useAuthState(auth);
+  const [admin] = useAdmin(user);
   return (
     <div className="drawer drawer-mobile mt-10">
       <input id="dashboard-sidebar" type="checkbox" className="drawer-toggle" />
@@ -23,13 +23,13 @@ const Dashboard = () => {
           <li>
             <Link to="/dashboard">My Order</Link>
           </li>
-          <li>
-            <Link to="/dashboard/addReview">Add A Review</Link>
-          </li>
+
           <li>
             <Link to="/dashboard/profile">My Profile</Link>
           </li>
-
+          <li>
+            <Link to="/dashboard/addReview">Review Add</Link>
+          </li>
           {admin && (
             <>
               <li>
@@ -38,12 +38,11 @@ const Dashboard = () => {
               <li>
                 <Link to="/dashboard/addProduct">Product Add</Link>
               </li>
+              <li>
+                <Link to="/dashboard/manageProduct">Manage Product</Link>
+              </li>
             </>
           )}
-
-          <li>
-            <Link to="/dashboard/addReview">Review Add</Link>
-          </li>
         </ul>
       </div>
     </div>
