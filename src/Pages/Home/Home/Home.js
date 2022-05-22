@@ -1,5 +1,6 @@
 import React from "react";
 import useProducts from "../../../hooks/useProducts";
+import Review from "../../Review/Review";
 import Tools from "../../Tools/Tools";
 import Banner from "../Banner/Banner";
 import BusinessSummary from "../BusinessSummary/BusinessSummary";
@@ -18,6 +19,7 @@ const Home = () => {
         ))}
       </div>
       <BusinessSummary></BusinessSummary>
+      <Review></Review>
     </div>
   );
 };

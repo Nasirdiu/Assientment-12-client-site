@@ -143,7 +143,7 @@ const SingUp = () => {
             </div>
             {singInError}
             <input
-              className="btn w-full max-w-xs text-warning"
+              className="btn w-full max-w-xs text-secondary btn-accent"
               type="submit"
               value="Sing Up "
             />

@@ -1,7 +1,6 @@
 import React from "react";
 
 const Tools = ({ product }) => {
-  console.log(product);
   const { name, price, stock, img, category,ratingsCount } = product;
   return (
     <div class="card w-96 bg-base-100 shadow-xl">

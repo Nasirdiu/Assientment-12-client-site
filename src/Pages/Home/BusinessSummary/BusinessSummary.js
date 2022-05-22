@@ -26,8 +26,8 @@ const BusinessSummary = () => {
               />
             </svg>
           </div>
-          <div class="stat-value">65</div>
-          <div class="stat-title text-secondary">Countries</div>
+          <div class="stat-value">100+</div>
+          <div class="stat-title text-secondary">Customers</div>
         </div>
 
         <div class="stat">
@@ -43,12 +43,12 @@ const BusinessSummary = () => {
               <path
                 stroke-linecap="round"
                 stroke-linejoin="round"
-                d="M9.75 17L9 20l-1 1h8l-1-1-.75-3M3 13h18M5 17h14a2 2 0 002-2V5a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"
+                d="M4 5a1 1 0 011-1h14a1 1 0 011 1v2a1 1 0 01-1 1H5a1 1 0 01-1-1V5zM4 13a1 1 0 011-1h6a1 1 0 011 1v6a1 1 0 01-1 1H5a1 1 0 01-1-1v-6zM16 13a1 1 0 011-1h2a1 1 0 011 1v6a1 1 0 01-1 1h-2a1 1 0 01-1-1v-6z"
               />
             </svg>
           </div>
           <div class="stat-value">500+</div>
-          <div class="stat-title text-secondary">Completes Projects</div>
+          <div class="stat-title text-secondary">Tools</div>
         </div>
 
         <div class="stat">
@@ -88,8 +88,8 @@ const BusinessSummary = () => {
               />
             </svg>
           </div>
-          <div class="stat-value">432+</div>
-          <div class="stat-title text-secondary">Feedbacks</div>
+          <div class="stat-value">33k+</div>
+          <div class="stat-title text-secondary">Reviews</div>
         </div>
       </div>
     </div>

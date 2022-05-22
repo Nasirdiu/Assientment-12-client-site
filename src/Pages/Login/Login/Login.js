@@ -146,7 +146,7 @@ const Login = () => {
             </p>
 
             <input
-              className="btn w-full max-w-xs text-warning my-4"
+              className="btn w-full max-w-xs text-secondary my-4 btn-accent"
               type="submit"
               value="Login "
             />
