@@ -1,9 +1,11 @@
-import React from 'react';
-import { Link, Outlet } from 'react-router-dom';
+import React from "react";
+import { Link, Outlet } from "react-router-dom";
+import useAdmin from "../../hooks/useAdmin";
 
 const Dashboard = () => {
-    return (
-        <div className="drawer drawer-mobile mt-10">
+  const [admin] = useAdmin();
+  return (
+    <div className="drawer drawer-mobile mt-10">
       <input id="dashboard-sidebar" type="checkbox" className="drawer-toggle" />
       <div className="drawer-content">
         <h2 className="text-2xl font-bold text-center text-purple-500">
@@ -27,9 +29,11 @@ const Dashboard = () => {
           <li>
             <Link to="/dashboard/addReview">Review Add</Link>
           </li>
-          <li>
-            <Link to="/dashboard/addProduct">Product Add</Link>
-          </li>
+          {admin && (
+            <li>
+              <Link to="/dashboard/addProduct">Product Add</Link>
+            </li>
+          )}
           {/* {admin && <>
             <li>
             <Link to="/dashboard/user">All User</Link>
@@ -45,7 +49,7 @@ const Dashboard = () => {
         </ul>
       </div>
     </div>
-    );
+  );
 };
 
 export default Dashboard;

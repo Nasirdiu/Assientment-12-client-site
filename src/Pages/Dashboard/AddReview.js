@@ -23,6 +23,7 @@ const AddReview = () => {
       .then((res) => res.json())
       .then((result) => {
         if (result.success) {
+
           const img = result.data.url;
           const product = {
             name: data.name,
@@ -55,7 +56,7 @@ const AddReview = () => {
   };
   return (
     <div className="mt-10">
-      <h1 className="3xl text-center text-secondary font-bold ">Review Add</h1>
+      <h1 className="text-2xl text-center text-secondary font-bold ">Review Add</h1>
       <form className="mb-10" onSubmit={handleSubmit(onSubmit)}>
         <div className="form-control w-full max-w-xs">
           <label className="label">

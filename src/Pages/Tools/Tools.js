@@ -15,7 +15,7 @@ const Tools = ({ product }) => {
         <p>Available:{available}</p>
         <p>Description:{description}</p>
         <div class="card-actions">
-          <Link to="/dashboard">
+          <Link to="/purchase">
             <button class="btn btn-secondary">Buy Now</button>
           </Link>
         </div>

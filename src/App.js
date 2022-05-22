@@ -1,6 +1,6 @@
 import { Route, Routes } from "react-router-dom";
 import "./App.css";
-import { ToastContainer, toast } from "react-toastify";
+import { ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import Navbar from "./components/Navbar/Navbar";
 import Footer from "./components/Footer/Footer";
@@ -16,6 +16,8 @@ import MyOrder from "./Pages/Dashboard/MyOrder";
 import Profile from "./Pages/Dashboard/Profile";
 import ProductAdd from "./Pages/Dashboard/ProductAdd";
 import ReviewAdd from "./Pages/Dashboard/AddReview";
+import NotFound from "./components/NotFound";
+import PurchaseProduct from "./Pages/Tools/PurchaseProduct";
 function App() {
   return (
     <div>
@@ -27,6 +29,15 @@ function App() {
         <Route path="/blogs" element={<Blogs></Blogs>}></Route>
         <Route path="/login" element={<Login></Login>}></Route>
         <Route path="/singUp" element={<SingUp></SingUp>}></Route>
+        <Route
+          path="/purchase"
+          element={
+            <RequireAuth>
+              <PurchaseProduct></PurchaseProduct>
+            </RequireAuth>
+          }
+        ></Route>
+
         <Route
           path="/dashboard"
           element={
@@ -41,6 +52,7 @@ function App() {
           <Route path="addReview" element={<ReviewAdd></ReviewAdd>}></Route>
           <Route path="addProduct" element={<ProductAdd></ProductAdd>}></Route>
         </Route>
+        <Route path="*" element={<NotFound></NotFound>}></Route>
       </Routes>
       <Footer></Footer>
       <ToastContainer />
