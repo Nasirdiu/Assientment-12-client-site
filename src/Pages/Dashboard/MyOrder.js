@@ -15,11 +15,12 @@ const MyOrder = () => {
           return res.json();
         })
         .then((data) => {
-          console.log(data);
+          // console.log(data);
           setOrder(data);
         });
     }
   }, [user]);
+  
   return (
     <div className="mt-5">
     <h1 className="text-center text-secondary uppercase mt-5 mb-5 text-2xl">
@@ -59,7 +60,7 @@ const MyOrder = () => {
                   <div>
                     <p>
                       {" "}
-                      <span className="text-success">paid</span>
+                      <span className="text-red-500">Payment Complete</span>
                     </p>
                     <p>
                       Transaction Id:
