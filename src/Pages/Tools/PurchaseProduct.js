@@ -1,8 +1,8 @@
 import React, { useEffect, useState } from "react";
 import { useAuthState } from "react-firebase-hooks/auth";
 import { useParams } from "react-router-dom";
+import { toast } from "react-toastify";
 import auth from "../../firebase.init";
-import useProducts from "../../hooks/useProducts";
 
 const PurchaseProduct = () => {
   const [user, loading, error] = useAuthState(auth);
@@ -10,14 +10,40 @@ const PurchaseProduct = () => {
   const { id } = useParams();
   const handleSubmit = (event) => {
     event.preventDefault();
+    const data = {
+      customer: user.displayName,
+      ProductName: purchase.name,
+      customerEmail: user.email,
+      address: event.target.address.value,
+      PostCode: event.target.code.value,
+      minProduct: event.target.number.value,
+      phone: event.target.phone.value,
+    };
+    fetch("http://localhost:5000/orderProduct", {
+      method: "POST",
+      headers: {
+        "Content-type": "application/json",
+      },
+      body: JSON.stringify(data),
+    })
+      .then((res) => res.json())
+      .then((data) => {
+        if (data.acknowledged) {
+          toast("Success Order");
+        } else {
+          toast("Order Error");
+        }
+        event.target.reset()
+      });
   };
+
   useEffect(() => {
     fetch(`http://localhost:5000/product/${id}`)
       .then((res) => res.json())
       .then((data) => setPurchase(data));
   }, []);
   return (
-    <div class="card w-96 bg-base-100 shadow-xl mx-auto mt-16">
+    <div class="card w-96 bg-base-200 shadow-xl mx-auto mt-16">
       <figure class="px-10 pt-10">
         <img src={purchase.img} alt="Shoes" class="rounded-xl" />
       </figure>
@@ -25,6 +51,8 @@ const PurchaseProduct = () => {
         <h2 class="card-title">Name:{purchase.name}</h2>
         <p>Description:{purchase.description}</p>
         <p>Price:{purchase.price}</p>
+        <p className="text-red-500">Minimum Order:{purchase.minimum}</p>
+        <p>Available:{purchase.available}</p>
         <div class="card-actions">
           <label for="booking-modal" class="btn modal-button btn-accent">
             Order Now
@@ -51,6 +79,12 @@ const PurchaseProduct = () => {
                 />
                 <input
                   type="text"
+                  value={purchase.name || ""}
+                  disabled
+                  class="input input-bordered w-full max-w-xs"
+                />
+                <input
+                  type="text"
                   value={user?.email || ""}
                   disabled
                   class="input input-bordered w-full max-w-xs"
@@ -58,23 +92,22 @@ const PurchaseProduct = () => {
                 <input
                   type="text"
                   placeholder="Your Address"
+                  name="address"
                   class="input input-bordered w-full max-w-xs"
                 />
                 <input
                   type="text"
                   placeholder="Your Post Code"
+                  name="code"
                   class="input input-bordered w-full max-w-xs"
                 />
                 <input
                   type="number"
-                  placeholder="Increase"
+                  placeholder="Minimum Order"
+                  name="number"
                   class="input input-bordered w-full max-w-xs"
                 />
-                <input
-                  type="number"
-                  placeholder="Decrease"
-                  class="input input-bordered w-full max-w-xs"
-                />
+
                 <input
                   type="number"
                   name="phone"
