@@ -11,6 +11,8 @@ const PurchaseProduct = () => {
   const handleSubmit = (event) => {
     event.preventDefault();
     const data = {
+      ProductId: purchase._id,
+      price: purchase.price,
       customer: user.displayName,
       ProductName: purchase.name,
       customerEmail: user.email,
@@ -33,7 +35,7 @@ const PurchaseProduct = () => {
         } else {
           toast("Order Error");
         }
-        event.target.reset()
+        event.target.reset();
       });
   };
 

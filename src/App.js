@@ -22,6 +22,7 @@ import Admin from "./Pages/Dashboard/Admin";
 import RequireAdmin from "./components/RequireAdmin/RequireAdmin";
 import ManageProduct from "./Pages/Dashboard/ManageProduct";
 import AllOrder from "./Pages/Dashboard/AllOrder";
+import Payment from "./Pages/Dashboard/Payment";
 
 function App() {
   return (
@@ -58,6 +59,7 @@ function App() {
           <Route path="addProduct" element={<ProductAdd></ProductAdd>}></Route>
           <Route path="manageProduct" element={<ManageProduct></ManageProduct>}></Route>
           <Route path="orderAll" element={<AllOrder></AllOrder>}></Route>
+          <Route path="payment/:id" element={<Payment></Payment>}></Route>
           <Route
             path="admin"
             element={
