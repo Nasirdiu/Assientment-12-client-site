@@ -84,7 +84,7 @@ const CheckoutForm = ({ order }) => {
       });
   };
   return (
-    <>
+    < >
       <form onSubmit={handleSubmit}>
         <CardElement
           options={{

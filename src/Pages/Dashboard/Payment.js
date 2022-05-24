@@ -22,15 +22,15 @@ const Payment = () => {
     return <Loading></Loading>;
   }
   return (
-    <div>
-      <div class="card max-w-md bg-base-100 shadow-xl my-12">
+    <div className="bg-slate-300 ">
+      <div class="card max-w-md bg-indigo-700 shadow-xl my-12">
         <div class="card-body">
           <h2 class="card-title text-secondary">Hello !{order.customer}</h2>
           <p className="text-2xl text-red-500">
             Please Pay For:{order.ProductName}
           </p>
-          <p>Phone:{order.phone}</p>
-          <p>Please Pay:${order.price}</p>
+          <p className="text-red-500"> Phone:{order.phone}</p>
+          <p className="text-red-500">Please Pay:${order.price}</p>
         </div>
       </div>
       <div class="card flex-shrink-0 w-50 max-w-md shadow-2xl bg-base-100">

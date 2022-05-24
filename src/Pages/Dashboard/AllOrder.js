@@ -27,6 +27,7 @@ const AllOrder = () => {
               <th>Address</th>
               <th>Phone</th>
               <th>Email</th>
+              <th>Price</th>
             </tr>
           </thead>
           <tbody>
@@ -38,6 +39,7 @@ const AllOrder = () => {
                 <td>{a.address}</td>
                 <td>{a.phone}</td>
                 <td>{a.customerEmail}</td>
+                <td>{a.price}</td>
                 
               </tr>
             ))}

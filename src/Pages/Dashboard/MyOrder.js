@@ -54,6 +54,7 @@ const MyOrder = () => {
               <th>Product Name</th>
               <th>Address</th>
               <th>Phone</th>
+              <th>Price</th>
               <th>Delete</th>
               <th>Payment</th>
             </tr>
@@ -66,6 +67,7 @@ const MyOrder = () => {
                 <td>{a.ProductName}</td>
                 <td>{a.address}</td>
                 <td>{a.phone}</td>
+                <td>${a.price}</td>
                 <button
                   onClick={() => handleDelete(a._id)}
                   className="btn btn-accent"
