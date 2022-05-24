@@ -1,70 +1,38 @@
-# Getting Started with Create React App
+# Car Auto Parts ....
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Live sit Link :- [https://electronics-warehouse-56938.web.app/](https://electronics-warehouse-56938.web.app/).
 
-## Available Scripts
+## Car Auto Parts Review....
 
-In the project directory, you can run:
+<p>
+Automotive tools are also either hand or power tools. Hand tools include wrenches, ratchets, and pliers. Examples of automotive tools that need electricity to run are drills, electric wrenches and some types of tire inflators. Some power tools, such as pneumatic impact wrenches, are air-driven.
+</p>
 
-### `npm start`
+## Project Review....
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+<ul>
+    <li>Car Auto Parts</li>
+    <li>Sing Up</li>
+    <li>Login</li>
+    <li>Admin</li>
+    <li>Price</li>
+    <li>Payment</li>
+    <li>Delete Product</li>
+    <li>Review</li>
+</ul>
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+## Use Technologies ....
 
-### `npm test`
-
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
-
-### `npm run build`
-
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
-
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+<ul>
+    <li>React Framework</li>
+    <li>React Router</li>
+    <li>Firebase</li>
+    <li>React Firebase Hooks</li>
+    <li>React tailwindcss</li>
+    <li>React Toastify</li>
+    <li>Node Js</li>
+    <li>Express Cors Dotenv</li>
+    <li>Database Mongodb</li>
+    <li>stripe</li>
+    <li>React From</li>
+</ul>

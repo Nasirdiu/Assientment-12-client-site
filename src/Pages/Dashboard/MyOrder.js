@@ -72,7 +72,7 @@ const MyOrder = () => {
                   onClick={() => handleDelete(a._id)}
                   className="btn btn-accent"
                 >
-                  Delete
+                  Delete Order
                 </button>
                 <td>
                   {a.price && !a.paid && (
