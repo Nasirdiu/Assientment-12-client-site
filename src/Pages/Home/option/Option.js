@@ -1,17 +1,34 @@
 import React from "react";
-
+import car from "../../../asstes/car.jpg";
 const Option = () => {
   return (
-    <div class="hero min-h-screen bg-base-200">
-  <div class="hero-content flex-col lg:flex-row-reverse">
-    <img src="https://api.lorem.space/image/movie?w=260&h=400" class="max-w-sm rounded-lg shadow-2xl" />
-    <div>
-      <h1 class="text-5xl font-bold">Box Office News!</h1>
-      <p class="py-6">Provident cupiditate voluptatem et in. Quaerat fugiat ut assumenda excepturi exercitationem quasi. In deleniti eaque aut repudiandae et a id nisi.</p>
-      <button class="btn btn-primary">Get Started</button>
+    <div className="bg-zinc-200">
+      <h1 className="text-secondary text-center text-3xl uppercase font-bold">Car Body</h1>
+      <div class="hero min-h-screen ">
+      <div class="hero-content flex-col lg:flex-row-reverse">
+        <img src={car} class=" rounded-lg shadow-2xl" alt="" />
+        <div>
+          <h1 class="text-5xl font-bold text-secondary"> Toyota Car Body </h1>
+          <p class="py-6">
+            Toyota Motor Corporation's vehicle production system is a way of
+            making things that is sometimes referred to as a "lean manufacturing
+            system," or a "Just-in-Time (JIT) system," and has come to be well
+            known and studied worldwide. This production control system was
+            established based on many years of continuous improvements, with the
+            objective of making the vehicles ordered by customers in the
+            quickest and most efficient way, in order to deliver the vehicles as
+            swiftly as possible. The Toyota Production System (TPS) was
+            established based on two concepts: "jidoka" (which can be loosely
+            translated as "automation with a human touch"), as when a problem
+            occurs, the equipment stops immediately, preventing defective
+            products from being produced; and the "Just-in-Time" concept, in
+            which each process produces only what is needed for the next process
+            in a continuous flow.
+          </p>
+        </div>
+      </div>
     </div>
-  </div>
-</div>
+    </div>
   );
 };
 
