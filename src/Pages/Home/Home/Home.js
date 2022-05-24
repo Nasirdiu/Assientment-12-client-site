@@ -4,6 +4,7 @@ import Review from "../../Review/Review";
 import Tools from "../../Tools/Tools";
 import Banner from "../Banner/Banner";
 import BusinessSummary from "../BusinessSummary/BusinessSummary";
+import Option from "../option/Option";
 
 const Home = () => {
   const [products, setProducts] = useProducts();
@@ -20,6 +21,7 @@ const Home = () => {
       </div>
       <BusinessSummary></BusinessSummary>
       <Review></Review>
+      <Option></Option>
     </div>
   );
 };

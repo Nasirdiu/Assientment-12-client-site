@@ -9,14 +9,14 @@ const MyOrder = () => {
   const [user] = useAuthState(auth);
   useEffect(() => {
     if (user) {
-      fetch(`http://localhost:5000/order`, {
+      fetch(`http://localhost:5000/order?customerEmail=${user.email}`, {
         method: "GET",
       })
         .then((res) => {
           return res.json();
         })
         .then((data) => {
-          // console.log(data);
+          console.log(data);
           setOrder(data);
         });
     }
