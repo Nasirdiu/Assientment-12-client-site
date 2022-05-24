@@ -1,9 +1,10 @@
 import React from "react";
 import { toast } from "react-toastify";
 
+
 const UserAdmin = ({ user, refetch }) => {
-  const { email, role } = user;
-  const makeAdmin = () => {
+  const { _id,email, role } = user;
+  const MakeAdmin = () => {
     fetch(`http://localhost:5000/user/admin/${email}`, {
       method: "PUT",
     })
@@ -16,20 +17,37 @@ const UserAdmin = ({ user, refetch }) => {
       });
   };
 
+  const handleDelete = (id) => {
+    const proceed = window.confirm("Are You Sure Order Delete?");
+    if (proceed) {
+      const url = `http://localhost:5000/user/${id}`;
+      // console.log(url);
+      fetch(url, {
+        method: "DELETE",
+      })
+        .then((res) => res.json())
+        .then((data) => {
+          if (data.deletedCount > 0) {
+            toast("Delete Admin");
+          }
+        });
+    }
+  };
+
   return (
     <tr>
       <th>1</th>
       <td>{email}</td>
       <td>
       
-        {role !== "admin" && (
-          <button onClick={makeAdmin} className="btn btn-xs">
+        {role !== "admin" ?(
+          <button onClick={MakeAdmin} className="btn btn-xs">
             Make Admin
           </button>
-        )}
+       ): <p className="text-red-500">All Ready Admin</p>}
       </td>
       <td>
-        <button className="btn btn-xs btn-accent">Remove User</button>
+        <button onClick={() => handleDelete(_id)} className="btn btn-xs btn-accent">Remove Admin</button>
       </td>
     </tr>
   );

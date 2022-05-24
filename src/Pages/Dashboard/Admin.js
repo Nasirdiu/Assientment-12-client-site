@@ -18,7 +18,7 @@ const Admin = () => {
   }
   return (
     <div>
-      <h2 className="text-2xl">All Users:{users.length}</h2>
+      <h2 className="text-2xl text-center text-secondary mt-5" >All Users:{users.length}</h2>
       <div className="overflow-x-auto">
         <table className="table w-full">
           <thead>

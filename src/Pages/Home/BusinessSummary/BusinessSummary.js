@@ -1,7 +1,7 @@
 import React from "react";
 const BusinessSummary = () => {
   return (
-    <div className="bg-zinc-200">
+    <div className="bg-zinc-200 px-10">
       <h1 className="text-3xl text-center uppercase mt-10 font-bold text-secondary">
       Business Summary
       </h1>
