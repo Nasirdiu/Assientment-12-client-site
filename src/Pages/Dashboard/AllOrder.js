@@ -3,7 +3,7 @@ import { useQuery } from "react-query";
 import Loading from "../../components/Loadding/Loading";
 
 const AllOrder = () => {
-  const url = `http://localhost:5000/order/`;
+  const url = `http://localhost:5000/orders/`;
   const { data: order, isLoading } = useQuery(["order"], () =>
     fetch(url, {
       method: "GET",
