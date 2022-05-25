@@ -23,7 +23,6 @@ const AddReview = () => {
       .then((res) => res.json())
       .then((result) => {
         if (result.success) {
-
           const img = result.data.url;
           const product = {
             name: data.name,
@@ -36,7 +35,7 @@ const AddReview = () => {
             img: img,
           };
           //send to your database:
-          fetch("http://localhost:5000/uploadReview", {
+          fetch("https://mighty-island-92006.herokuapp.com/uploadReview", {
             method: "POST",
             headers: {
               "content-type": "application/json",
@@ -57,7 +56,9 @@ const AddReview = () => {
   };
   return (
     <div className="mt-10">
-      <h1 className="text-2xl text-center text-secondary font-bold ">Review Add</h1>
+      <h1 className="text-2xl text-center text-secondary font-bold ">
+        Review Add
+      </h1>
       <form className="mb-10" onSubmit={handleSubmit(onSubmit)}>
         <div className="form-control w-full max-w-xs">
           <label className="label">

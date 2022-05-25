@@ -11,7 +11,7 @@ const CheckoutForm = ({ order }) => {
 
   const { _id, price, ProductName, customerEmail, customer } = order;
   useEffect(() => {
-    fetch("http://localhost:5000/create-payment-intent", {
+    fetch("https://mighty-island-92006.herokuapp.com/create-payment-intent", {
       method: "POST",
       headers: {
         "Content-type": "application/json",
@@ -70,7 +70,7 @@ const CheckoutForm = ({ order }) => {
       order: _id,
       transactionId: paymentIntent.id,
     };
-    fetch(`http://localhost:5000/order/${_id}`, {
+    fetch(`https://mighty-island-92006.herokuapp.com/order/${_id}`, {
       method: "PATCH",
       headers: {
         "Content-type": "application/json",
@@ -80,11 +80,10 @@ const CheckoutForm = ({ order }) => {
       .then((res) => res.json())
       .then((data) => {
         setProcessing(false);
-        
       });
   };
   return (
-    < >
+    <>
       <form onSubmit={handleSubmit}>
         <CardElement
           options={{

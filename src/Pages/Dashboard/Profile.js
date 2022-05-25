@@ -14,14 +14,16 @@ const Profile = () => {
     isLoading,
     refetch,
   } = useQuery("users", () =>
-    fetch(`http://localhost:5000/userprofile/${user.email}`, {
-      method: "GET",
-    }).then((res) => res.json())
+    fetch(
+      `https://mighty-island-92006.herokuapp.com/userprofile/${user.email}`,
+      {
+        method: "GET",
+      }
+    ).then((res) => res.json())
   );
   if (isLoading) {
     return <Loading></Loading>;
   }
-  
 
   const editProfile = (id) => {
     navigated(`/myProfile/${id}`);
@@ -30,8 +32,8 @@ const Profile = () => {
     <div>
       <div className="w-1/2 mx-auto mt-4 bg-gray-500 p-4 rounded-lg">
         <div className="text-center text-white">
-          <div class="avatar">
-            <div class="w-24 rounded-full ring ring-primary ring-offset-base-100 ring-offset-2">
+          <div className="avatar">
+            <div className="w-24 rounded-full ring ring-primary ring-offset-base-100 ring-offset-2">
               <img src={users.img} alt="" />
             </div>
           </div>

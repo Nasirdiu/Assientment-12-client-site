@@ -28,13 +28,13 @@ const MyProfile = () => {
           const img = result.data.url;
           const product = {
             name: data.name,
-            facebook:data.facebook,
-            age:data.age,
-            linkedin:data.linkedin,
+            facebook: data.facebook,
+            age: data.age,
+            linkedin: data.linkedin,
             img: img,
           };
           //send to your database:
-          fetch(`http://localhost:5000/userprofile/${id}`, {
+          fetch(`https://mighty-island-92006.herokuapp.com/userprofile/${id}`, {
             method: "PUT",
             headers: {
               "content-type": "application/json",
@@ -43,10 +43,8 @@ const MyProfile = () => {
           })
             .then((res) => res.json())
             .then((inserted) => {
-               
-                toast(" added successfully");
-                reset();
-              
+              toast(" added successfully");
+              reset();
             });
         }
       });
@@ -54,7 +52,9 @@ const MyProfile = () => {
 
   return (
     <div className="mt-10">
-      <h1 className="text-2xl text-center text-secondary font-bold ">Profile Add</h1>
+      <h1 className="text-2xl text-center text-secondary font-bold ">
+        Profile Add
+      </h1>
       <form className="mb-10" onSubmit={handleSubmit(onSubmit)}>
         <div className="form-control w-full max-w-xs">
           <label className="label">
@@ -179,7 +179,7 @@ const MyProfile = () => {
         />
       </form>
     </div>
-      );
+  );
 };
 
 export default MyProfile;

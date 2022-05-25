@@ -1,11 +1,10 @@
 import React from "react";
 import { toast } from "react-toastify";
 
-
 const UserAdmin = ({ user, refetch }) => {
-  const { _id,email, role } = user;
+  const { _id, email, role } = user;
   const MakeAdmin = () => {
-    fetch(`http://localhost:5000/user/admin/${email}`, {
+    fetch(`https://mighty-island-92006.herokuapp.com/user/admin/${email}`, {
       method: "PUT",
     })
       .then((res) => res.json())
@@ -20,7 +19,7 @@ const UserAdmin = ({ user, refetch }) => {
   const handleDelete = (id) => {
     const proceed = window.confirm("Are You Sure Order Delete?");
     if (proceed) {
-      const url = `http://localhost:5000/user/${id}`;
+      const url = `https://mighty-island-92006.herokuapp.com/user/${id}`;
       // console.log(url);
       fetch(url, {
         method: "DELETE",
@@ -39,15 +38,21 @@ const UserAdmin = ({ user, refetch }) => {
       <th>1</th>
       <td>{email}</td>
       <td>
-      
-        {role !== "admin" ?(
+        {role !== "admin" ? (
           <button onClick={MakeAdmin} className="btn btn-xs">
             Make Admin
           </button>
-       ): <p className="text-red-500">All Ready Admin</p>}
+        ) : (
+          <p className="text-red-500">All Ready Admin</p>
+        )}
       </td>
       <td>
-        <button onClick={() => handleDelete(_id)} className="btn btn-xs btn-accent">Remove Admin</button>
+        <button
+          onClick={() => handleDelete(_id)}
+          className="btn btn-xs btn-accent"
+        >
+          Remove Admin
+        </button>
       </td>
     </tr>
   );

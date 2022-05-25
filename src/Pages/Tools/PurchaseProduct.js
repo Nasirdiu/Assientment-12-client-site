@@ -9,7 +9,7 @@ const PurchaseProduct = () => {
   const [user, loading, error] = useAuthState(auth);
   const [purchase, setPurchase] = useState([]);
   const { id } = useParams();
-const {name,price}=purchase;
+  const { name, price } = purchase;
   const {
     register,
     handleSubmit,
@@ -17,8 +17,8 @@ const {name,price}=purchase;
     formState: { errors },
   } = useForm();
   const onSubmit = (data) => {
-    // console.log(data);
-    fetch("http://localhost:5000/orderProduct", {
+    console.log(data);
+    fetch("https://mighty-island-92006.herokuapp.com/orderProduct", {
       method: "POST",
       headers: {
         "content-type": "application/json",
@@ -27,39 +27,38 @@ const {name,price}=purchase;
     })
       .then((res) => res.json())
       .then((data) => {
-        toast('Order Is Success')
+        toast("Order Is Success");
         reset();
       });
-    
   };
 
   useEffect(() => {
-    fetch(`http://localhost:5000/product/${id}`)
+    fetch(`https://mighty-island-92006.herokuapp.com/product/${id}`)
       .then((res) => res.json())
       .then((data) => setPurchase(data));
   }, []);
 
   return (
-    <div class="card w-96 bg-base-200 shadow-xl mx-auto mt-16">
-      <figure class="px-10 pt-10">
-        <img src={purchase.img} alt="Shoes" class="rounded-xl" />
+    <div className="card w-96 bg-base-200 shadow-xl mx-auto mt-16">
+      <figure className="px-10 pt-10">
+        <img src={purchase.img} alt="Shoes" className="rounded-xl" />
       </figure>
-      <div class="card-body items-center text-center">
-        <h2 class="card-title">Name:{purchase.name}</h2>
+      <div className="card-body items-center text-center">
+        <h2 className="card-title">Name:{purchase.name}</h2>
         <p>Description:{purchase.description}</p>
         <p>Price:{purchase.price}</p>
         <p className="text-red-500">Minimum Order:{purchase.minimum}</p>
         <p>Available:{purchase.available}</p>
-        <div class="card-actions">
-          <label for="booking-modal" class="btn modal-button btn-accent">
+        <div className="card-actions">
+          <label for="booking-modal" className="btn modal-button btn-accent">
             Order Now
           </label>
 
           {/* modal */}
 
-          <input type="checkbox" id="booking-modal" class="modal-toggle" />
-          <div class="modal modal-bottom sm:modal-middle">
-            <div class="modal-box">
+          <input type="checkbox" id="booking-modal" className="modal-toggle" />
+          <div className="modal modal-bottom sm:modal-middle">
+            <div className="modal-box">
               <label
                 htmlFor="booking-modal"
                 className="btn btn-sm btn-circle absolute right-2 top-2"
@@ -71,6 +70,7 @@ const {name,price}=purchase;
                 <h1 className="text-2xl text-secondary">Order Now ....!</h1>
                 <input
                   placeholder="product name"
+                  required
                   value={name}
                   className="input input-bordered w-full"
                   {...register("ProductName")}
@@ -78,6 +78,7 @@ const {name,price}=purchase;
                 <br />
                 <input
                   placeholder="customer name"
+                  required
                   value={user?.displayName}
                   className="input input-bordered my-4 w-full"
                   {...register("customer")}
@@ -85,38 +86,43 @@ const {name,price}=purchase;
                 <br />
                 <input
                   placeholder="phone"
+                  required
                   className="input input-bordered w-full"
                   {...register("phone")}
                 />
                 <br />
                 <input
+                  required
                   placeholder="address"
                   className="input input-bordered my-4 w-full"
                   {...register("address")}
                 />
                 <br />
                 <input
+                  required
                   placeholder="post code"
                   className="input input-bordered w-full"
                   {...register("code")}
                 />
                 <br />
                 <input
+                  placeholder="price"
+                  // value={price}
+                  className="input input-bordered my-4 w-full"
+                  {...register("price")}
+                />
+                <br />
+                <input
+                  required
                   placeholder="customer email"
                   value={user?.email}
                   className="input input-bordered my-4 w-full"
                   {...register("customerEmail")}
                 />
                 <br />
+
                 <input
-                  placeholder="Price"
-                  value={price}
-                  className="input input-bordered my-4 w-full"
-                  {...register("price")}
-                />
-                <br />
-                
-                <input
+                  required
                   placeholder="Order quantity"
                   className="input input-bordered w-full"
                   type="number"

@@ -4,7 +4,7 @@ import { toast } from "react-toastify";
 import Loading from "../../components/Loadding/Loading";
 
 const AllOrder = () => {
-  const url = `http://localhost:5000/orders/`;
+  const url = `https://mighty-island-92006.herokuapp.com/orders/`;
   const {
     data: order,
     isLoading,
@@ -18,15 +18,15 @@ const AllOrder = () => {
   const handleDelete = (id) => {
     const proceed = window.confirm("Are You Sure Order Delete?");
     if (proceed) {
-      const url = `http://localhost:5000/order/${id}`;
+      const url = `https://mighty-island-92006.herokuapp.com/order/${id}`;
       // console.log(url);
       fetch(url, {
         method: "DELETE",
       })
         .then((res) => res.json())
         .then((data) => {
-            refetch();
-            toast("Order Delete");
+          refetch();
+          toast("Order Delete");
         });
     }
   };
@@ -60,7 +60,8 @@ const AllOrder = () => {
                 <td>{a.address}</td>
                 <td>{a.phone}</td>
                 <td>{a.customerEmail}</td>
-                <button disabled={a.paid}
+                <button
+                  disabled={a.paid}
                   onClick={() => handleDelete(a._id)}
                   className="btn btn-accent"
                 >

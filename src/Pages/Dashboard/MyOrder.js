@@ -9,9 +9,12 @@ const MyOrder = () => {
   const [user] = useAuthState(auth);
   useEffect(() => {
     if (user) {
-      fetch(`http://localhost:5000/order?customerEmail=${user.email}`, {
-        method: "GET",
-      })
+      fetch(
+        `https://mighty-island-92006.herokuapp.com/order?customerEmail=${user.email}`,
+        {
+          method: "GET",
+        }
+      )
         .then((res) => {
           return res.json();
         })
@@ -25,7 +28,7 @@ const MyOrder = () => {
   const handleDelete = (id) => {
     const proceed = window.confirm("Are You Sure Order Delete?");
     if (proceed) {
-      const url = `http://localhost:5000/order/${id}`;
+      const url = `https://mighty-island-92006.herokuapp.com/order/${id}`;
       console.log(url);
       fetch(url, {
         method: "DELETE",
@@ -68,7 +71,8 @@ const MyOrder = () => {
                 <td>{a.address}</td>
                 <td>{a.phone}</td>
                 <td>${a.price}</td>
-                <button disabled={a.paid}
+                <button
+                  disabled={a.paid}
                   onClick={() => handleDelete(a._id)}
                   className="btn btn-secondary"
                 >
@@ -81,7 +85,11 @@ const MyOrder = () => {
                     </Link>
                   )}
                   {a.price && a.paid && (
-                    <div><p>{" "}<span className="text-red-500">Payment Complete</span></p>
+                    <div>
+                      <p>
+                        {" "}
+                        <span className="text-red-500">Payment Complete</span>
+                      </p>
                       <p>
                         Transaction Id:
                         <span className="text-success">{a._id}</span>

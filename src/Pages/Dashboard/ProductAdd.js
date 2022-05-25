@@ -27,14 +27,14 @@ const ProductAdd = () => {
           const product = {
             name: data.name,
             email: data.email,
-            description:data.description,
-            price:data.price,
-            minimum:data.minimum,
-            available:data.available,
+            description: data.description,
+            price: data.price,
+            minimum: data.minimum,
+            available: data.available,
             img: img,
           };
           //send to your database:
-          fetch("http://localhost:5000/uploadProduct", {
+          fetch("https://mighty-island-92006.herokuapp.com/uploadProduct", {
             method: "POST",
             headers: {
               "content-type": "application/json",
@@ -53,10 +53,12 @@ const ProductAdd = () => {
         }
       });
   };
-  
+
   return (
     <div className="mt-10">
-      <h1 className="text-2xl text-center text-secondary font-bold ">Product Add</h1>
+      <h1 className="text-2xl text-center text-secondary font-bold ">
+        Product Add
+      </h1>
       <form className="mb-10" onSubmit={handleSubmit(onSubmit)}>
         <div className="form-control w-full max-w-xs">
           <label className="label">

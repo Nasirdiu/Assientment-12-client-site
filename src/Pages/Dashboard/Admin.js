@@ -9,14 +9,14 @@ const Admin = () => {
     isLoading,
     refetch,
   } = useQuery(["users", []], () =>
-    fetch(`http://localhost:5000/user`, {
+    fetch(`https://mighty-island-92006.herokuapp.com/user`, {
       method: "GET",
     }).then((res) => res.json())
   );
   if (isLoading) {
     return <Loading></Loading>;
   }
-  
+
   return (
     <div>
       <h2 className="text-2xl text-center text-secondary mt-5">

@@ -3,17 +3,17 @@ const BusinessSummary = () => {
   return (
     <div className="bg-zinc-200 px-10">
       <h1 className="text-3xl text-center uppercase mt-10 font-bold text-secondary">
-      Business Summary
+        Business Summary
       </h1>
       <h1 className="text-purple-600 uppercase text-center">
         try to understand users expectation
       </h1>
-      <div class="mt-10 mb-20 stats stats-vertical lg:stats-horizontal shadow w-full text-center">
-        <div class="stat">
+      <div className="mt-10 mb-20 stats stats-vertical lg:stats-horizontal shadow w-full text-center">
+        <div className="stat">
           <div>
             <svg
               xmlns="http://www.w3.org/2000/svg"
-              class="w-1/4 mx-auto"
+              className="w-1/4 mx-auto"
               fill="none"
               viewBox="0 0 24 24"
               stroke="currentColor"
@@ -26,15 +26,15 @@ const BusinessSummary = () => {
               />
             </svg>
           </div>
-          <div class="stat-value">100+</div>
-          <div class="stat-title text-secondary">Customers</div>
+          <div className="stat-value">100+</div>
+          <div className="stat-title text-secondary">Customers</div>
         </div>
 
-        <div class="stat">
+        <div className="stat">
           <div>
             <svg
               xmlns="http://www.w3.org/2000/svg"
-              class="w-1/4 mx-auto"
+              className="w-1/4 mx-auto"
               fill="none"
               viewBox="0 0 24 24"
               stroke="currentColor"
@@ -47,15 +47,15 @@ const BusinessSummary = () => {
               />
             </svg>
           </div>
-          <div class="stat-value">500+</div>
-          <div class="stat-title text-secondary">Tools</div>
+          <div className="stat-value">500+</div>
+          <div className="stat-title text-secondary">Tools</div>
         </div>
 
-        <div class="stat">
+        <div className="stat">
           <div>
             <svg
               xmlns="http://www.w3.org/2000/svg"
-              class="w-1/4 mx-auto"
+              className="w-1/4 mx-auto"
               fill="none"
               viewBox="0 0 24 24"
               stroke="currentColor"
@@ -68,14 +68,14 @@ const BusinessSummary = () => {
               />
             </svg>
           </div>
-          <div class="stat-value">1000+</div>
-          <div class="stat-title text-secondary">Happy Client</div>
+          <div className="stat-value">1000+</div>
+          <div className="stat-title text-secondary">Happy Client</div>
         </div>
-        <div class="stat">
+        <div className="stat">
           <div>
             <svg
               xmlns="http://www.w3.org/2000/svg"
-              class="w-1/4 mx-auto"
+              className="w-1/4 mx-auto"
               fill="none"
               viewBox="0 0 24 24"
               stroke="currentColor"
@@ -88,8 +88,8 @@ const BusinessSummary = () => {
               />
             </svg>
           </div>
-          <div class="stat-value">33k+</div>
-          <div class="stat-title text-secondary">Reviews</div>
+          <div className="stat-value">33k+</div>
+          <div className="stat-title text-secondary">Reviews</div>
         </div>
       </div>
     </div>
