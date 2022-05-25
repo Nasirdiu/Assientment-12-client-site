@@ -58,10 +58,13 @@ function App() {
           <Route path="profile" element={<Profile></Profile>}></Route>
           <Route path="addReview" element={<ReviewAdd></ReviewAdd>}></Route>
           <Route path="addProduct" element={<ProductAdd></ProductAdd>}></Route>
-          <Route path="manageProduct" element={<ManageProduct></ManageProduct>}></Route>
+          <Route
+            path="manageProduct"
+            element={<ManageProduct></ManageProduct>}
+          ></Route>
           <Route path="orderAll" element={<AllOrder></AllOrder>}></Route>
           <Route path="payment/:id" element={<Payment></Payment>}></Route>
-         
+
           <Route
             path="admin"
             element={
@@ -71,7 +74,7 @@ function App() {
             }
           ></Route>
         </Route>
-        <Route path="myProfile" element={<MyProfile></MyProfile>}></Route>
+        <Route path="/myProfile/:id" element={<MyProfile></MyProfile>}></Route>
         <Route path="*" element={<NotFound></NotFound>}></Route>
       </Routes>
       <Footer></Footer>

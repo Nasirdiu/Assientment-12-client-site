@@ -17,7 +17,7 @@ const Home = () => {
         Car Tools 
       </h1>
       <div className="grid grid-cols-1 lg:grid-cols-3 gap-4 px-12 mt-10">
-        {products.slice(0, 6).map((product) => (
+        {products.slice(-6).map((product) => (
           <Tools key={product.id} product={product}></Tools>
         ))}
       </div>
