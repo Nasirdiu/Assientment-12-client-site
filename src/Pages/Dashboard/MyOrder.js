@@ -68,9 +68,9 @@ const MyOrder = () => {
                 <td>{a.address}</td>
                 <td>{a.phone}</td>
                 <td>${a.price}</td>
-                <button
+                <button disabled={a.paid}
                   onClick={() => handleDelete(a._id)}
-                  className="btn btn-accent"
+                  className="btn btn-secondary"
                 >
                   Delete Order
                 </button>

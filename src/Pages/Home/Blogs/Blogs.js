@@ -2,10 +2,10 @@ import React from "react";
 
 const Blogs = () => {
   return (
-    <div className=" m-10 ">
+    <div className=" m-10 bg-zinc-200 ">
       <div
         tabindex="0"
-        class="collapse collapse-open border border-base-300 bg-base-100 rounded-box"
+        class="collapse collapse-open border border-base-300 bg-base-100 rounded-box "
       >
         <div class="collapse-title text-xl font-medium text-secondary">
           How will you improve the performance of a React Application?

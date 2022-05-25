@@ -2,7 +2,7 @@ import React from "react";
 import { useForm } from "react-hook-form";
 import { toast } from "react-toastify";
 
-const AddReview = () => {
+const MyProfile = () => {
   const {
     register,
     formState: { errors },
@@ -16,6 +16,7 @@ const AddReview = () => {
     const formData = new FormData();
     formData.append("image", image);
     const url = `https://api.imgbb.com/1/upload?key=${imageStorageKey}`;
+    console.log(url);
     fetch(url, {
       method: "POST",
       body: formData,
@@ -23,20 +24,18 @@ const AddReview = () => {
       .then((res) => res.json())
       .then((result) => {
         if (result.success) {
-
           const img = result.data.url;
           const product = {
             name: data.name,
-            email: data.email,
-            description: data.description,
-            price: data.price,
-            minimum: data.minimum,
-            available: data.available,
-            ratting: data.ratting,
+            facebook: data.facebook,
+            linkedin: data.linkedin,
+            phone: data.phone,
+            age: data.age,
             img: img,
           };
+
           //send to your database:
-          fetch("http://localhost:5000/uploadReview", {
+          fetch("http://localhost:5000/uploadProfile", {
             method: "POST",
             headers: {
               "content-type": "application/json",
@@ -56,8 +55,11 @@ const AddReview = () => {
       });
   };
   return (
-    <div className="mt-10">
-      <h1 className="text-2xl text-center text-secondary font-bold ">Review Add</h1>
+    <div className="mt-10 bg-gray-300">
+      <h1 className="text-2xl text-center text-secondary font-bold ">
+        {" "}
+        Add Profile
+      </h1>
       <form className="mb-10" onSubmit={handleSubmit(onSubmit)}>
         <div className="form-control w-full max-w-xs">
           <label className="label">
@@ -84,49 +86,97 @@ const AddReview = () => {
         </div>
         <div className="form-control w-full max-w-xs">
           <label className="label">
-            <span className="label-text">Description</span>
+            <span className="label-text">Facebook Profile Url</span>
           </label>
           <input
             type="text"
-            placeholder="Your Description"
+            placeholder="Your Profile Url Facebook"
             className="input input-bordered w-full max-w-xs"
-            {...register("description", {
+            {...register("facebook", {
               required: {
                 value: true,
-                message: "Name is Required",
+                message: "facebook is Required",
               },
             })}
           />
           <label className="label">
-            {errors.description?.type === "required" && (
+            {errors.facebook?.type === "required" && (
               <span className="label-text-alt text-red-600">
-                {errors.description.message}
+                {errors.facebook.message}
               </span>
             )}
           </label>
         </div>
         <div className="form-control w-full max-w-xs">
           <label className="label">
-            <span className="label-text">Ratting</span>
+            <span className="label-text">Linkedin Profile Url</span>
           </label>
           <input
-            type="number"
+            type="text"
+            placeholder="Your Profile Url Linkedin"
             className="input input-bordered w-full max-w-xs"
-            {...register("ratting", {
+            {...register("linkedin", {
               required: {
                 value: true,
-                message: "ratting is Required",
+                message: "linkedin is Required",
               },
             })}
           />
           <label className="label">
-            {errors.name?.type === "required" && (
+            {errors.linkedin?.type === "required" && (
               <span className="label-text-alt text-red-600">
-                {errors.name.message}
+                {errors.linkedin.message}
               </span>
             )}
           </label>
         </div>
+        <div className="form-control w-full max-w-xs">
+          <label className="label">
+            <span className="label-text">Phone Number</span>
+          </label>
+          <input
+            type="number"
+            placeholder="Your Phone Number"
+            className="input input-bordered w-full max-w-xs"
+            {...register("phone", {
+              required: {
+                value: true,
+                message: "phone is Required",
+              },
+            })}
+          />
+          <label className="label">
+            {errors.phone?.type === "required" && (
+              <span className="label-text-alt text-red-600">
+                {errors.phone.message}
+              </span>
+            )}
+          </label>
+        </div>
+        <div className="form-control w-full max-w-xs">
+          <label className="label">
+            <span className="label-text">Age</span>
+          </label>
+          <input
+            type="number"
+            placeholder="Your Age"
+            className="input input-bordered w-full max-w-xs"
+            {...register("age", {
+              required: {
+                value: true,
+                message: "age is Required",
+              },
+            })}
+          />
+          <label className="label">
+            {errors.age?.type === "required" && (
+              <span className="label-text-alt text-red-600">
+                {errors.age.message}
+              </span>
+            )}
+          </label>
+        </div>
+
         <div className="form-control w-full max-w-xs">
           <label className="label">
             <span className="label-text">Image</span>
@@ -160,4 +210,4 @@ const AddReview = () => {
   );
 };
 
-export default AddReview;
+export default MyProfile;

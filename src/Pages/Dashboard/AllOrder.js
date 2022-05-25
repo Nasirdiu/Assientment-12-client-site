@@ -1,14 +1,37 @@
 import React from "react";
 import { useQuery } from "react-query";
+import { toast } from "react-toastify";
 import Loading from "../../components/Loadding/Loading";
 
 const AllOrder = () => {
   const url = `http://localhost:5000/orders/`;
-  const { data: order, isLoading } = useQuery(["order"], () =>
+  const {
+    data: order,
+    isLoading,
+    refetch,
+  } = useQuery(["order"], () =>
     fetch(url, {
       method: "GET",
     }).then((res) => res.json())
   );
+
+  const handleDelete = (id) => {
+    const proceed = window.confirm("Are You Sure Order Delete?");
+    if (proceed) {
+      const url = `http://localhost:5000/order/${id}`;
+      // console.log(url);
+      fetch(url, {
+        method: "DELETE",
+      })
+        .then((res) => res.json())
+        .then((data) => {
+          if (data.deletedCount > 0) {
+            refetch();
+            toast("Order Delete");
+          }
+        });
+    }
+  };
   if (isLoading) {
     return <Loading></Loading>;
   }
@@ -27,7 +50,7 @@ const AllOrder = () => {
               <th>Address</th>
               <th>Phone</th>
               <th>Email</th>
-              <th>Price</th>
+              <th>Delete</th>
             </tr>
           </thead>
           <tbody>
@@ -39,8 +62,12 @@ const AllOrder = () => {
                 <td>{a.address}</td>
                 <td>{a.phone}</td>
                 <td>{a.customerEmail}</td>
-                <td>{a.price}</td>
-                
+                <button disabled={a.paid}
+                  onClick={() => handleDelete(a._id)}
+                  className="btn btn-accent"
+                >
+                  Delete
+                </button>
               </tr>
             ))}
           </tbody>

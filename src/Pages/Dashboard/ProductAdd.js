@@ -9,11 +9,6 @@ const ProductAdd = () => {
     handleSubmit,
     reset,
   } = useForm();
-  //   const { data: services, isLoading } = useQuery("services", () =>
-  //     fetch(`https://enigmatic-hamlet-55773.herokuapp.com/service`).then((res) =>
-  //       res.json()
-  //     )
-  //   );
   const imageStorageKey = "ff4a3bca6feff6db86f309b98922d201";
 
   const onSubmit = async (data) => {
@@ -58,9 +53,7 @@ const ProductAdd = () => {
         }
       });
   };
-  //   if (isLoading) {
-  //     return <Loading></Loading>;
-  //   }
+  
   return (
     <div className="mt-10">
       <h1 className="text-2xl text-center text-secondary font-bold ">Product Add</h1>

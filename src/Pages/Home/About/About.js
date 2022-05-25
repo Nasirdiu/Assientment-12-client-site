@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 import nasir from "../../../asstes/nasir.jpg";
 const About = () => {
   return (
-    <div>
+    <div className="bg-zinc-200 ">
       <h1 className="text-3xl text-center uppercase text-secondary mt-10 ">
         My profile
       </h1>

@@ -10,15 +10,17 @@ import Option from "../option/Option";
 const Home = () => {
   const [products, setProducts] = useProducts();
   return (
-    <div>
+    <div className="bg-zinc-200 ">
       <Banner></Banner>
-      <h1 className="text-3xl text-secondary uppercase text-center font-bold mt-10">
+      <div>
+      <h1 className="text-3xl text-secondary uppercase text-center font-bold mt-10 ">
         Car Tools 
       </h1>
-      <div className="grid grid-cols-1 lg:grid-cols-3 gap-4 px-12 bg-zinc-200 mt-10">
+      <div className="grid grid-cols-1 lg:grid-cols-3 gap-4 px-12 mt-10">
         {products.slice(0, 6).map((product) => (
           <Tools key={product.id} product={product}></Tools>
         ))}
+      </div>
       </div>
       <BusinessSummary></BusinessSummary>
       <Option></Option>
