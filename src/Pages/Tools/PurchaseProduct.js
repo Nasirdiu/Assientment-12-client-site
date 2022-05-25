@@ -3,40 +3,34 @@ import { useAuthState } from "react-firebase-hooks/auth";
 import { useParams } from "react-router-dom";
 import { toast } from "react-toastify";
 import auth from "../../firebase.init";
+import { useForm } from "react-hook-form";
 
 const PurchaseProduct = () => {
   const [user, loading, error] = useAuthState(auth);
   const [purchase, setPurchase] = useState([]);
   const { id } = useParams();
-  const handleSubmit = (event) => {
-    event.preventDefault();
-    const data = {
-      ProductId: purchase._id,
-      price: purchase.price,
-      customer: user.displayName,
-      ProductName: purchase.name,
-      customerEmail: user.email,
-      address: event.target.address.value,
-      PostCode: event.target.code.value,
-      minProduct: event.target.number.value,
-      phone: event.target.phone.value,
-    };
+const {name,price}=purchase;
+  const {
+    register,
+    handleSubmit,
+    reset,
+    formState: { errors },
+  } = useForm();
+  const onSubmit = (data) => {
+    // console.log(data);
     fetch("http://localhost:5000/orderProduct", {
       method: "POST",
       headers: {
-        "Content-type": "application/json",
+        "content-type": "application/json",
       },
       body: JSON.stringify(data),
     })
       .then((res) => res.json())
       .then((data) => {
-        if (data.acknowledged) {
-          toast("Success Order");
-        } else {
-          toast("Order Error");
-        }
-        event.target.reset();
+        toast('Order Is Success')
+        reset();
       });
+    
   };
 
   useEffect(() => {
@@ -44,6 +38,7 @@ const PurchaseProduct = () => {
       .then((res) => res.json())
       .then((data) => setPurchase(data));
   }, []);
+
   return (
     <div class="card w-96 bg-base-200 shadow-xl mx-auto mt-16">
       <figure class="px-10 pt-10">
@@ -72,59 +67,72 @@ const PurchaseProduct = () => {
                 ✕
               </label>
               {/* modal body */}
-              <form
-                onSubmit={handleSubmit}
-                className="grid grid-cols-1 gap-4 justify-items-center mt-3"
-              >
+              <form className="px-2 py-4" onSubmit={handleSubmit(onSubmit)}>
+                <h1 className="text-2xl text-secondary">Order Now ....!</h1>
                 <input
-                  type="text"
-                  value={user?.displayName || ""}
-                  disabled
-                  class="input input-bordered w-full max-w-xs"
+                  placeholder="product name"
+                  value={name}
+                  className="input input-bordered w-full"
+                  {...register("ProductName")}
                 />
+                <br />
                 <input
-                  type="text"
-                  value={purchase.name || ""}
-                  disabled
-                  class="input input-bordered w-full max-w-xs"
+                  placeholder="customer name"
+                  value={user?.displayName}
+                  className="input input-bordered my-4 w-full"
+                  {...register("customer")}
                 />
+                <br />
                 <input
-                  type="text"
-                  value={user?.email || ""}
-                  disabled
-                  class="input input-bordered w-full max-w-xs"
+                  placeholder="phone"
+                  className="input input-bordered w-full"
+                  {...register("phone")}
                 />
+                <br />
                 <input
-                  type="text"
-                  placeholder="Your Address"
-                  name="address"
-                  class="input input-bordered w-full max-w-xs"
+                  placeholder="address"
+                  className="input input-bordered my-4 w-full"
+                  {...register("address")}
                 />
+                <br />
                 <input
-                  type="text"
-                  placeholder="Your Post Code"
-                  name="code"
-                  class="input input-bordered w-full max-w-xs"
+                  placeholder="post code"
+                  className="input input-bordered w-full"
+                  {...register("code")}
                 />
+                <br />
                 <input
+                  placeholder="customer email"
+                  value={user?.email}
+                  className="input input-bordered my-4 w-full"
+                  {...register("customerEmail")}
+                />
+                <br />
+                <input
+                  placeholder="Price"
+                  value={price}
+                  className="input input-bordered my-4 w-full"
+                  {...register("price")}
+                />
+                <br />
+                
+                <input
+                  placeholder="Order quantity"
+                  className="input input-bordered w-full"
                   type="number"
-                  placeholder="Minimum Order"
-                  name="number"
-                  class="input input-bordered w-full max-w-xs"
+                  {...register("minProduct", {
+                    min: 500,
+                    max: purchase?.available,
+                  })}
                 />
-
-                <input
-                  type="number"
-                  name="phone"
-                  placeholder="Phone Number"
-                  className="input input-bordered w-full max-w-xs"
-                />
-                <input
-                  type="Submit"
-                  value="Submit"
-                  className="btn btn-secondary w-full max-w-xs "
-                  readOnly
-                />
+                <br />
+                {errors.minProduct && (
+                  <p className="text-red-800 font-bold w-full">
+                    minimum order 500 and max order {purchase?.available}
+                  </p>
+                )}
+                <br />
+                <input className="mt-4 btn btn-success w-2/4" type="submit" />
               </form>
             </div>
           </div>

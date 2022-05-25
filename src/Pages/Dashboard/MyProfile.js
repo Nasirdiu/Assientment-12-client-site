@@ -54,11 +54,11 @@ const MyProfile = () => {
 
   return (
     <div className="mt-10">
-      <h1 className="text-2xl text-center text-secondary font-bold ">Product Add</h1>
+      <h1 className="text-2xl text-center text-secondary font-bold ">Profile Add</h1>
       <form className="mb-10" onSubmit={handleSubmit(onSubmit)}>
         <div className="form-control w-full max-w-xs">
           <label className="label">
-            <span className="label-text">Product Name</span>
+            <span className="label-text">Profile Name</span>
           </label>
           <input
             type="text"
