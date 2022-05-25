@@ -60,6 +60,8 @@ const PurchaseProduct = () => {
             Order Now
           </label>
 
+          {/* modal */}
+
           <input type="checkbox" id="booking-modal" class="modal-toggle" />
           <div class="modal modal-bottom sm:modal-middle">
             <div class="modal-box">
@@ -69,6 +71,7 @@ const PurchaseProduct = () => {
               >
                 ✕
               </label>
+              {/* modal body */}
               <form
                 onSubmit={handleSubmit}
                 className="grid grid-cols-1 gap-4 justify-items-center mt-3"

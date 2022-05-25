@@ -21,7 +21,7 @@ const Profile = () => {
   if (isLoading) {
     return <Loading></Loading>;
   }
-   console.log(users);
+  
 
   const editProfile = (id) => {
     navigated(`/myProfile/${id}`);

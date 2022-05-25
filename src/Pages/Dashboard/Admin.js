@@ -8,7 +8,7 @@ const Admin = () => {
     data: users,
     isLoading,
     refetch,
-  } = useQuery("users", () =>
+  } = useQuery(["users", []], () =>
     fetch(`http://localhost:5000/user`, {
       method: "GET",
     }).then((res) => res.json())
@@ -16,9 +16,12 @@ const Admin = () => {
   if (isLoading) {
     return <Loading></Loading>;
   }
+  
   return (
     <div>
-      <h2 className="text-2xl text-center text-secondary mt-5" >All Users:{users.length}</h2>
+      <h2 className="text-2xl text-center text-secondary mt-5">
+        All Users:{users?.length}
+      </h2>
       <div className="overflow-x-auto">
         <table className="table w-full">
           <thead>
@@ -30,11 +33,11 @@ const Admin = () => {
             </tr>
           </thead>
           <tbody>
-            {users.map((user) => (
+            {users?.map((user) => (
               <UserAdmin
+                refetch={refetch}
                 key={user._id}
                 user={user}
-                refetch={refetch}
               ></UserAdmin>
             ))}
           </tbody>
