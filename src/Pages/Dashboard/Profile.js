@@ -36,9 +36,11 @@ const Profile = () => {
             </div>
           </div>
           <h1>user id: {users?._id}</h1>
-          <h1>user email: {users?.email}</h1>
-          <h1>user email: {users?.name}</h1>
-          <h1>user email: {users?.age}</h1>
+          <h1>user email: {user?.email}</h1>
+          <h1>user Name: {users?.name}</h1>
+          <h1>user age: {users?.age}</h1>
+          <h1>Facebook Url: {users?.facebook}</h1>
+          <h1>Linkedin Url: {users?.linkedin}</h1>
         </div>
         <div className="text-center">
           <button

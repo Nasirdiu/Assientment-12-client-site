@@ -28,11 +28,9 @@ const MyProfile = () => {
           const img = result.data.url;
           const product = {
             name: data.name,
-            email: data.email,
-            description:data.description,
-            price:data.price,
-            minimum:data.minimum,
-            available:data.available,
+            facebook:data.facebook,
+            age:data.age,
+            linkedin:data.linkedin,
             img: img,
           };
           //send to your database:
@@ -83,13 +81,13 @@ const MyProfile = () => {
         </div>
         <div className="form-control w-full max-w-xs">
           <label className="label">
-            <span className="label-text">Description</span>
+            <span className="label-text">Facebook Url</span>
           </label>
           <input
             type="text"
-            placeholder="Your Description"
+            placeholder="Your Facebook"
             className="input input-bordered w-full max-w-xs"
-            {...register("description", {
+            {...register("facebook", {
               required: {
                 value: true,
                 message: "Name is Required",
@@ -97,9 +95,32 @@ const MyProfile = () => {
             })}
           />
           <label className="label">
-            {errors.description?.type === "required" && (
+            {errors.facebook?.type === "required" && (
               <span className="label-text-alt text-red-600">
-                {errors.description.message}
+                {errors.facebook.message}
+              </span>
+            )}
+          </label>
+        </div>
+        <div className="form-control w-full max-w-xs">
+          <label className="label">
+            <span className="label-text">Linkedin Url</span>
+          </label>
+          <input
+            type="text"
+            placeholder="Your linkedin"
+            className="input input-bordered w-full max-w-xs"
+            {...register("linkedin", {
+              required: {
+                value: true,
+                message: "Name is Required",
+              },
+            })}
+          />
+          <label className="label">
+            {errors.linkedin?.type === "required" && (
+              <span className="label-text-alt text-red-600">
+                {errors.linkedin.message}
               </span>
             )}
           </label>
@@ -112,17 +133,17 @@ const MyProfile = () => {
             type="number"
             placeholder="Your Age"
             className="input input-bordered w-full max-w-xs"
-            {...register("price", {
+            {...register("age", {
               required: {
                 value: true,
-                message: "price is Required",
+                message: "age is Required",
               },
             })}
           />
           <label className="label">
-            {errors.price?.type === "required" && (
+            {errors.age?.type === "required" && (
               <span className="label-text-alt text-red-600">
-                {errors.price.message}
+                {errors.age.message}
               </span>
             )}
           </label>
