@@ -17,7 +17,6 @@ const PurchaseProduct = () => {
     formState: { errors },
   } = useForm();
   const onSubmit = (data) => {
-  
     fetch("https://mighty-island-92006.herokuapp.com/orderProduct", {
       method: "POST",
       headers: {
@@ -35,7 +34,10 @@ const PurchaseProduct = () => {
   useEffect(() => {
     fetch(`https://mighty-island-92006.herokuapp.com/product/${id}`)
       .then((res) => res.json())
-      .then((data) => setPurchase(data));
+      .then((data) => {
+        setPurchase(data);
+        reset();
+      });
   }, []);
 
   return (
@@ -107,7 +109,7 @@ const PurchaseProduct = () => {
                 <br />
                 <input
                   placeholder="price"
-                  // value={price}
+                  value={price}
                   className="input input-bordered my-4 w-full"
                   {...register("price")}
                 />
