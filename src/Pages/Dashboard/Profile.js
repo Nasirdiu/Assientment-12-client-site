@@ -30,7 +30,8 @@ const Profile = () => {
   };
   return (
     <div>
-      <div className="w-1/2 mx-auto mt-4 bg-gray-500 p-4 rounded-lg">
+      <h1 className="text-white text-center uppercase font-bold mt-5">Your profile</h1>
+      <div className="w-1/2 mx-auto mt-4 p-4 rounded-lg">
         <div className="text-center text-white">
           <div className="avatar">
             <div className="w-24 rounded-full ring ring-primary ring-offset-base-100 ring-offset-2">

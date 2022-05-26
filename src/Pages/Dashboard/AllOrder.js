@@ -63,7 +63,7 @@ const AllOrder = () => {
                 <button
                   disabled={a.paid}
                   onClick={() => handleDelete(a._id)}
-                  className="btn btn-accent"
+                  className="btn btn-secondary"
                 >
                   Delete
                 </button>

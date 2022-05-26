@@ -51,11 +51,11 @@ const MyProfile = () => {
   };
 
   return (
-    <div className="mt-10">
+    <div className="mt-10 bg-slate-600">
       <h1 className="text-2xl text-center text-secondary font-bold ">
         Profile Add
       </h1>
-      <form className="mb-10" onSubmit={handleSubmit(onSubmit)}>
+      <form className=" ml-16  " onSubmit={handleSubmit(onSubmit)}>
         <div className="form-control w-full max-w-xs">
           <label className="label">
             <span className="label-text">Profile Name</span>
@@ -173,7 +173,7 @@ const MyProfile = () => {
         </div>
 
         <input
-          className="btn w-full max-w-xs text-white btn-accent"
+          className="btn w-full max-w-xs text-white btn-secondary"
           type="submit"
           value="Add"
         />

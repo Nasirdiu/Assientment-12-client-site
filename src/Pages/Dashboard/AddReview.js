@@ -59,10 +59,10 @@ const AddReview = () => {
       <h1 className="text-2xl text-center text-secondary font-bold ">
         Review Add
       </h1>
-      <form className="mb-10" onSubmit={handleSubmit(onSubmit)}>
+      <form className="ml-20 " onSubmit={handleSubmit(onSubmit)}>
         <div className="form-control w-full max-w-xs">
           <label className="label">
-            <span className="label-text">Name</span>
+            <span className="label-text text-white">Name</span>
           </label>
           <input
             type="text"
@@ -85,7 +85,7 @@ const AddReview = () => {
         </div>
         <div className="form-control w-full max-w-xs">
           <label className="label">
-            <span className="label-text">Description</span>
+            <span className="label-text text-white">Description</span>
           </label>
           <input
             type="text"
@@ -108,10 +108,11 @@ const AddReview = () => {
         </div>
         <div className="form-control w-full max-w-xs">
           <label className="label">
-            <span className="label-text">Ratting</span>
+            <span className="label-text text-white">Ratting</span>
           </label>
           <input
             type="number"
+            placeholder="Your Ratting"
             className="input input-bordered w-full max-w-xs"
             {...register("ratting", {
               required: {
@@ -130,7 +131,7 @@ const AddReview = () => {
         </div>
         <div className="form-control w-full max-w-xs">
           <label className="label">
-            <span className="label-text">Image</span>
+            <span className="label-text text-white">Image</span>
           </label>
           <input
             type="file"
@@ -152,7 +153,7 @@ const AddReview = () => {
         </div>
 
         <input
-          className="btn w-full max-w-xs text-white btn-accent"
+          className="btn w-full max-w-xs text-white btn-secondary"
           type="submit"
           value="Add"
         />

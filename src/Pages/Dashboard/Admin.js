@@ -23,7 +23,7 @@ const Admin = () => {
         All Users:{users?.length}
       </h2>
       <div className="overflow-x-auto">
-        <table className="table w-full">
+        <table className="table w-full ">
           <thead>
             <tr>
               <th></th>

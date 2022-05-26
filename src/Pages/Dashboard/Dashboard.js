@@ -8,7 +8,7 @@ const Dashboard = () => {
   const [user] = useAuthState(auth);
   const [admin] = useAdmin(user);
   return (
-    <div className="drawer drawer-mobile mt-10 bg-gray-300	">
+    <div className="drawer drawer-mobile mt-10 bg-slate-700	">
       <input id="dashboard-sidebar" type="checkbox" className="drawer-toggle" />
       <div className="drawer-content">
         <h2 className="text-2xl font-bold text-center text-purple-500">

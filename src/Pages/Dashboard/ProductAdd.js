@@ -55,14 +55,14 @@ const ProductAdd = () => {
   };
 
   return (
-    <div className="mt-10">
+    <div className="mt-10  p-5">
       <h1 className="text-2xl text-center text-secondary font-bold ">
         Product Add
       </h1>
-      <form className="mb-10" onSubmit={handleSubmit(onSubmit)}>
+      <form className="ml-20" onSubmit={handleSubmit(onSubmit)}>
         <div className="form-control w-full max-w-xs">
           <label className="label">
-            <span className="label-text">Product Name</span>
+            <span className="label-text text-white">Product Name</span>
           </label>
           <input
             type="text"
@@ -85,7 +85,7 @@ const ProductAdd = () => {
         </div>
         <div className="form-control w-full max-w-xs">
           <label className="label">
-            <span className="label-text">Description</span>
+            <span className="label-text text-white">Description</span>
           </label>
           <input
             type="text"
@@ -108,7 +108,7 @@ const ProductAdd = () => {
         </div>
         <div className="form-control w-full max-w-xs">
           <label className="label">
-            <span className="label-text">Price</span>
+            <span className="label-text text-white">Price</span>
           </label>
           <input
             type="number"
@@ -131,7 +131,7 @@ const ProductAdd = () => {
         </div>
         <div className="form-control w-full max-w-xs">
           <label className="label">
-            <span className="label-text">Minimum Order</span>
+            <span className="label-text text-white">Minimum Order</span>
           </label>
           <input
             type="number"
@@ -154,7 +154,7 @@ const ProductAdd = () => {
         </div>
         <div className="form-control w-full max-w-xs">
           <label className="label">
-            <span className="label-text">Available Product</span>
+            <span className="label-text text-white">Available Product</span>
           </label>
           <input
             type="number"
@@ -177,7 +177,7 @@ const ProductAdd = () => {
         </div>
         <div className="form-control w-full max-w-xs">
           <label className="label">
-            <span className="label-text">Email</span>
+            <span className="label-text text-white">Email</span>
           </label>
           <input
             type="email"
@@ -209,7 +209,7 @@ const ProductAdd = () => {
         </div>
         <div className="form-control w-full max-w-xs">
           <label className="label">
-            <span className="label-text">Image</span>
+            <span className="label-text text-white">Image</span>
           </label>
           <input
             type="file"
@@ -231,7 +231,7 @@ const ProductAdd = () => {
         </div>
 
         <input
-          className="btn w-full max-w-xs text-white btn-accent"
+          className="btn w-full max-w-xs text-white btn-secondary"
           type="submit"
           value="Add"
         />

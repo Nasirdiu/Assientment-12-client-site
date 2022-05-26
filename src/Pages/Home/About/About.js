@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 import nasir from "../../../asstes/nasir.jpg";
 const About = () => {
   return (
-    <div className="bg-zinc-200 ">
+    <div className="bg-slate-700">
       <h1 className="text-3xl text-center uppercase text-secondary mt-10 ">
         My profile
       </h1>
@@ -15,13 +15,13 @@ const About = () => {
                 <img src={nasir} />
               </div>
             </div>
-            <h1 className="text-3xl font-bold ">Md.Nasir Uddin</h1>
-            <p className="py-3 text-3xl">
+            <h1 className="text-3xl font-bold text-white ">Md.Nasir Uddin</h1>
+            <p className="py-3 text-3xl text-white">
               Educational: Dhaka International University. <br />
               Department:BSC In Computer Science And Engineering.
             </p>
-            <p className="py-3 text-1xl">Email:nasir.joypurhat@gmail.com</p>
-            <p className="py-3 text-2xl">web developer Skill</p>
+            <p className="py-3 text-1xl text-white">Email:nasir.joypurhat@gmail.com</p>
+            <p className="py-3 text-2xl text-white">web developer Skill</p>
             <div className="text-3xl grid grid-cols-1 lg:grid-cols-3 gap-4 px-12">
               <div className="grid w-32 h-20 rounded bg-primary text-primary-content place-content-center">
                 Html 5

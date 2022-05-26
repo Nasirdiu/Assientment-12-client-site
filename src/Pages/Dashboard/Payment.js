@@ -22,8 +22,8 @@ const Payment = () => {
     return <Loading></Loading>;
   }
   return (
-    <div className="bg-slate-300 ">
-      <div className="card max-w-md bg-indigo-700 shadow-xl my-12">
+    <div className="bg-slate-700 ml-20">
+      <div className="card max-w-md bg-white shadow-xl my-12">
         <div className="card-body">
           <h2 className="card-title text-secondary">Hello !{order.customer}</h2>
           <p className="text-2xl text-red-500">
