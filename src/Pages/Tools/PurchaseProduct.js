@@ -71,16 +71,16 @@ const PurchaseProduct = () => {
               <form className="px-2 py-4" onSubmit={handleSubmit(onSubmit)}>
                 <h1 className="text-2xl text-secondary">Order Now ....!</h1>
                 <input
-                  placeholder="product name"
-                  required
+                  
+                  
                   value={name}
                   className="input input-bordered w-full"
                   {...register("ProductName")}
                 />
                 <br />
                 <input
-                  placeholder="customer name"
-                  required
+                  
+                  
                   value={user?.displayName}
                   className="input input-bordered my-4 w-full"
                   {...register("customer")}
@@ -108,14 +108,14 @@ const PurchaseProduct = () => {
                 />
                 <br />
                 <input
-                  placeholder="price"
+                  
                   value={price}
                   className="input input-bordered my-4 w-full"
                   {...register("price")}
                 />
                 <br />
                 <input
-                  required
+                  
                   placeholder="customer email"
                   value={user?.email}
                   className="input input-bordered my-4 w-full"
@@ -125,7 +125,7 @@ const PurchaseProduct = () => {
 
                 <input
                   required
-                  placeholder="Order quantity"
+                  placeholder="minimum Order"
                   className="input input-bordered w-full"
                   type="number"
                   {...register("minProduct", {
