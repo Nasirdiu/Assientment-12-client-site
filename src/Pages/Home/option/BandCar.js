@@ -11,14 +11,14 @@ import Mercedes from "../../../asstes/car logo/download.png";
 import Rolls from "../../../asstes/car logo/rrrrrrr.jpg";
 const BandCar = () => {
   return (
-    <div className="mt-10">
+    <div className="mt-10 ">
       <h1 className="text-secondary text-center text-3xl uppercase font-bold">
         Band Car Visit Now
       </h1>
       <h1 className="text-red-500 text-center text-1xl uppercase font-bold">
         We have the tools of this band
       </h1>
-      <div className="grid grid-cols-1 lg:grid-cols-5 gap-4 px-12 mt-10 ">
+      <div className="grid grid-cols-1 lg:grid-cols-5 gap-4 px-12 mt-10 m-5 p-20">
         <div className="avatar ">
           <div className="w-24 rounded-full ring ring-primary ring-offset-base-100 ring-offset-2">
             <a href="https://www.mercedes-benz.com/en/">

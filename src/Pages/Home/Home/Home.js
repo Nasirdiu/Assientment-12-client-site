@@ -10,7 +10,7 @@ import Option from "../option/Option";
 const Home = () => {
   const [products, setProducts] = useProducts();
   return (
-    <div className="bg-zinc-200 ">
+    <div className="bg-slate-600 ">
       <Banner></Banner>
       <div>
       <h1 className="text-3xl text-secondary uppercase text-center font-bold mt-10 ">

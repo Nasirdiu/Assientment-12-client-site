@@ -2,7 +2,7 @@ import React from "react";
 import car from "../../../asstes/car.jpg";
 const Option = () => {
   return (
-    <div className="bg-zinc-200">
+    <div className="">
       <h1 className="text-secondary text-center text-3xl uppercase font-bold">
         Car Body
       </h1>
@@ -14,7 +14,7 @@ const Option = () => {
               {" "}
               Toyota Car Body{" "}
             </h1>
-            <p className="py-6">
+            <p className="py-6 text-white">
               Toyota Motor Corporation's vehicle production system is a way of
               making things that is sometimes referred to as a "lean
               manufacturing system," or a "Just-in-Time (JIT) system," and has

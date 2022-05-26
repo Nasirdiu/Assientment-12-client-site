@@ -4,10 +4,10 @@ import footer from '../../asstes/images/footer.png';
 const Footer = () => {
     return (
         <footer
-      style={{ background: `url(${footer})`, backgroundSize: "cover" }}
-      className=" p-10 mt-16"
+      
+      className=" p-10 mt-16 bg-slate-600"
     >
-      <div className="footer">
+      <div className="footer text-white">
         <div>
           <span className="footer-title">Services</span>
           <Link to='/' className="link link-hover">Branding</Link>
@@ -16,7 +16,7 @@ const Footer = () => {
           <Link to='/' className="link link-hover">Advertisement</Link>
         </div>
         <div>
-          <span className="footer-title">Company</span>
+          <span className="footer-title ">Company</span>
           <Link to='/' className="link link-hover">About us</Link>
           <Link to='/' className="link link-hover">Contact</Link>
           <Link to='/' className="link link-hover">Jobs</Link>
@@ -29,7 +29,7 @@ const Footer = () => {
           <Link to='/' className="link link-hover">Cookie policy</Link>
         </div>
       </div>
-      <div className="my-10 text-center">
+      <div className="my-10 text-center text-white">
         <p>Copyright © 2022 - All right reserved by Car Auto Parts</p>
       </div>
     </footer>
