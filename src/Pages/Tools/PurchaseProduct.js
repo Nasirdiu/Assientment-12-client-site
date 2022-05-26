@@ -17,7 +17,7 @@ const PurchaseProduct = () => {
     formState: { errors },
   } = useForm();
   const onSubmit = (data) => {
-    console.log(data);
+  
     fetch("https://mighty-island-92006.herokuapp.com/orderProduct", {
       method: "POST",
       headers: {
