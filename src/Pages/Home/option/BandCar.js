@@ -12,7 +12,7 @@ import Rolls from "../../../asstes/car logo/rrrrrrr.jpg";
 const BandCar = () => {
   return (
     <div className="mt-10 ">
-      <h1 className="text-secondary text-center text-3xl uppercase font-bold">
+      <h1 className="text-accent text-center text-3xl uppercase font-bold">
         Band Car Visit Now
       </h1>
       <h1 className="text-red-500 text-center text-1xl uppercase font-bold">

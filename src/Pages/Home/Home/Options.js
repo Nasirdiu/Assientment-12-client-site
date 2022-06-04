@@ -1,21 +1,21 @@
 import React from "react";
-import car from "../../../asstes/car.jpg";
-const Option = () => {
+import car from '../../../asstes/images/car.jpg'
+const Options = () => {
   return (
-    <div className="">
+    <div className="mt-40">
       <h1 className="text-accent text-center text-3xl uppercase font-bold">
-        Car Body
+        Car Discount
       </h1>
       <div className="hero min-h-screen ">
-        <div className="hero-content flex-col lg:flex-row-reverse">
-          <img src={car} className=" rounded-lg shadow-2xl" alt="" />
-          <div>
+        <div className="hero-content flex-col lg:flex-row-reverse mx-40">
+          <img src={car} className=" rounded-lg shadow-2xl w-96 h-80" alt="" />
+          <div >
             <h1 className="text-5xl font-bold text-accent">
               {" "}
-              Toyota Car Body{" "}
+              Mercedes-Benz Car Discount 50%{" "}
             </h1>
             <p className="py-6">
-              Toyota Motor Corporation's vehicle production system is a way of
+            Mercedes-Benz Motor Corporation's vehicle production system is a way of
               making things that is sometimes referred to as a "lean
               manufacturing system," or a "Just-in-Time (JIT) system," and has
               come to be well known and studied worldwide. This production
@@ -30,11 +30,14 @@ const Option = () => {
               and the "Just-in-Time" concept, in which each process produces
               only what is needed for the next process in a continuous flow.
             </p>
+            <button className="btn btn-secondary">Buy Now</button>
           </div>
+         
         </div>
       </div>
-    </div>
+      </div>
+    
   );
 };
 
-export default Option;
+export default Options;
